@@ -1,0 +1,6 @@
+framework module HDTableDataSource_Swift {
+  umbrella header "HDTableDataSource_Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

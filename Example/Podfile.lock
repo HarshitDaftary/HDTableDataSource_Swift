@@ -1,0 +1,16 @@
+PODS:
+  - HDTableDataSource_Swift (0.1.0)
+
+DEPENDENCIES:
+  - HDTableDataSource_Swift (from `../`)
+
+EXTERNAL SOURCES:
+  HDTableDataSource_Swift:
+    :path: ../
+
+SPEC CHECKSUMS:
+  HDTableDataSource_Swift: fd0c6ebb318d857eb78db2151b2c4ad399da052d
+
+PODFILE CHECKSUM: 63cab06fad154cfdfed4faa25186731a101103de
+
+COCOAPODS: 1.0.1

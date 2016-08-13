@@ -1,0 +1,6 @@
+use_frameworks!
+target 'HDTableDataSource_Swift_Tests' do
+  pod 'HDTableDataSource_Swift', :path => '../'
+  
+  
+end
