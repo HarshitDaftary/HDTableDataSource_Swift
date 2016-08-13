@@ -44,8 +44,8 @@ class HDTableDataSource: NSObject, UITableViewDataSource {
     
     func itemAtIndexPath(indexPath: NSIndexPath) -> AnyObject {
         if arrSections != nil {
-            var arrItems: [AnyObject] = self.getItemsArray(indexPath.section)
-            return arrItems[indexPath.row]
+            let arrTmpItems: [AnyObject] = self.getItemsArray(indexPath.section)
+            return arrTmpItems[indexPath.row]
         }
         return arrItems[indexPath.row]
     }
@@ -56,7 +56,7 @@ class HDTableDataSource: NSObject, UITableViewDataSource {
             return arrItems
         }
         
-        var objTmpSection: AnyObject = arrSections[pintSection]
+        let objTmpSection: AnyObject = arrSections[pintSection]
         
         if (sectionConfigurationBlock != nil) {
             return sectionConfigurationBlock(section: objTmpSection)
@@ -72,16 +72,16 @@ class HDTableDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var arrItems: [AnyObject] = self.getItemsArray(section)
-        return arrItems.count
+        let arrTmpItems: [AnyObject] = self.getItemsArray(section)
+        return arrTmpItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var item: AnyObject = self.itemAtIndexPath(indexPath)
+        let item: AnyObject = self.itemAtIndexPath(indexPath)
         if (cellIdentifierBlock != nil) {
             self.strCellIdentifier = cellIdentifierBlock(item: item, indexPath: indexPath) as String
         }
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(strCellIdentifier, forIndexPath: indexPath)
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(strCellIdentifier, forIndexPath: indexPath)
         cellConfigurationBlock(cell: cell, item: item, indexPath: indexPath)
         return cell
     }
